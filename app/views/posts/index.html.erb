@@ -1,9 +1,13 @@
 <h1>Posts</h1>
+<div class="row">
 <% @posts.each do |post| %>
-<p>
-	<strong><%= post.title %></strong><br>
-	Author: <%= post.author %><br>
-	<%= link_to "View more", post_path(post.id) %>
-	<!-- <a href="/posts/<%= post.id %>">View more</a> -->
-</p>
+	<div class="col-md-4">
+		<div class="jumbotron">
+			<strong><%= post.title %></strong><br>
+			Author: <%= post.author %><br>
+			<%= link_to "View more", post_path(post.id) %>
+			<!-- <a href="/posts/<%= post.id %>">View more</a> -->
+		</div>
+	</div>
 <% end %>
+</div>
