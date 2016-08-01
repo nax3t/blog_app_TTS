@@ -4,8 +4,9 @@
 	<div class="col-md-4">
 		<div class="jumbotron">
 			<strong><%= post.title %></strong><br>
-			Author: <%= post.author %><br>
-			<%= link_to "View more", post_path(post.id) %>
+			Author: <%= post.user.email %><br>
+			<%= truncate(post.body, length: 17) %><br>
+			<%= link_to "View more", post_path(post.id), class: "btn btn-primary" %>
 			<!-- <a href="/posts/<%= post.id %>">View more</a> -->
 		</div>
 	</div>

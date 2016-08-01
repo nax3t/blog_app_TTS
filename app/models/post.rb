@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
-	validates :author, :title, :image, :body, presence: true
+  belongs_to :user
+  
+	validates :title, :image, :body, presence: true
 	before_create :title_case
 
 	protected
